@@ -20,6 +20,8 @@
 		BD55B08A2C3EEEE7000293F5 /* CoreDatabaseSinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B0892C3EEEE7000293F5 /* CoreDatabaseSinger.swift */; };
 		BD55B08C2C3EF6B6000293F5 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B08B2C3EF6B6000293F5 /* Switch.swift */; };
 		BD55B08E2C3EF6DE000293F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B08D2C3EF6DE000293F5 /* ViewController.swift */; };
+		BD55B0902C3F0580000293F5 /* SingerNameShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B08F2C3F0580000293F5 /* SingerNameShowViewController.swift */; };
+		BDA25B4A2C3F4F5100B54015 /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA25B492C3F4F5100B54015 /* SongsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		BD55B0892C3EEEE7000293F5 /* CoreDatabaseSinger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDatabaseSinger.swift; sourceTree = "<group>"; };
 		BD55B08B2C3EF6B6000293F5 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		BD55B08D2C3EF6DE000293F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD55B08F2C3F0580000293F5 /* SingerNameShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerNameShowViewController.swift; sourceTree = "<group>"; };
+		BDA25B492C3F4F5100B54015 /* SongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				BD55B0582C3EEECE000293F5 /* SceneDelegate.swift */,
 				BD55B05A2C3EEECE000293F5 /* SingersViewController.swift */,
 				BD55B05C2C3EEECE000293F5 /* Main.storyboard */,
+				BDA25B492C3F4F5100B54015 /* SongsViewController.swift */,
+				BD55B08F2C3F0580000293F5 /* SingerNameShowViewController.swift */,
 				BD55B08D2C3EF6DE000293F5 /* ViewController.swift */,
 				BD55B08B2C3EF6B6000293F5 /* Switch.swift */,
 				BD55B0622C3EEECF000293F5 /* Assets.xcassets */,
@@ -271,11 +277,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD55B05B2C3EEECE000293F5 /* SingersViewController.swift in Sources */,
+				BDA25B4A2C3F4F5100B54015 /* SongsViewController.swift in Sources */,
 				BD55B08A2C3EEEE7000293F5 /* CoreDatabaseSinger.swift in Sources */,
 				BD55B0612C3EEECE000293F5 /* CoreDatabaseSinger.xcdatamodeld in Sources */,
 				BD55B08C2C3EF6B6000293F5 /* Switch.swift in Sources */,
 				BD55B08E2C3EF6DE000293F5 /* ViewController.swift in Sources */,
 				BD55B0572C3EEECE000293F5 /* AppDelegate.swift in Sources */,
+				BD55B0902C3F0580000293F5 /* SingerNameShowViewController.swift in Sources */,
 				BD55B0592C3EEECE000293F5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,83 +8,77 @@
 import UIKit
 import CoreData
 
-class SingersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SingersViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var singerNameTextField: UITextField!
+    @IBOutlet weak var songNameTextField: UITextField!
+    @IBOutlet weak var singersPickerView: UIPickerView!
     
     var singers: [Singer] = []
+    var songs: [Song] = []
+    var selectedSinger: Singer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.style = .large
-        fetchSingers()
+        singersPickerView.dataSource = self
+        singersPickerView.delegate = self
+        singersPickerView.isHidden = true
+        loadSingers()
+    }
+    
+    func loadSingers() {
+        singers = CoreDataManager.shared.fetchSingers()
+        singersPickerView.reloadAllComponents()
     }
     
     @IBAction func saveSinger(_ sender: UIButton) {
         guard let name = nameTextField.text, !name.isEmpty else {
             return
         }
-        
-        tableView.isHidden = true
-        activityIndicator.startAnimating()
-        
-        DispatchQueue.global(qos: .userInitiated).async {
             CoreDataManager.shared.createSinger(name: name)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.fetchSingers()
-                self.nameTextField.text = ""
-                self.tableView.isHidden = false
-                self.activityIndicator.stopAnimating()
-            }
+            self.nameTextField.text = ""
+    }
+    
+    @IBAction func saveSongButtonTapped(_ sender: UIButton) {
+        guard let songName = songNameTextField.text, !songName.isEmpty,
+              let selectedSinger = selectedSinger else {
+            return
+        }
+        CoreDataManager.shared.createSong(name: songName, singer: selectedSinger)
+        songNameTextField.text = ""
+        singerNameTextField.text = ""
+    }
+    
+    @IBAction func dropDownTapped(_ sender: UIButton) {
+        singersPickerView.isHidden = false
+    }
+    
+    
+    @IBAction func showSingers(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let singersTableViewController = storyboard.instantiateViewController(withIdentifier: "SingerNameShowViewController") as? SingerNameShowViewController {
+            navigationController?.pushViewController(singersTableViewController, animated: true)
         }
     }
-    
-    func fetchSingers() {
-        singers = CoreDataManager.shared.fetchSingers()
-        tableView.reloadData()
+}
+
+extension SingersViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return singers.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SingerCell", for: indexPath)
-        let singer = singers[indexPath.row]
-        cell.textLabel?.text = singer.name
-        return cell
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return singers[row].name
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let singer = singers[indexPath.row]
-        
-        let alert = UIAlertController(title: "Update/Delete Singer", message: "Update or delete the selected singer", preferredStyle: .alert)
-        
-        alert.addTextField { (textField) in
-            textField.text = singer.name
-        }
-        
-        alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { [weak self] _ in
-            guard let newName = alert.textFields?.first?.text, !newName.isEmpty else {
-                return
-            }
-            CoreDataManager.shared.updateSinger(singer: singer, newName: newName)
-            self?.fetchSingers()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
-            CoreDataManager.shared.deleteSinger(singer: singer)
-            self?.fetchSingers()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(alert, animated: true, completion: nil)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedSinger = singers[row]
+        singerNameTextField.text = selectedSinger?.name
+        singersPickerView.isHidden = true
     }
 }

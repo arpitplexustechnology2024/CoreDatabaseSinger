@@ -3,4 +3,8 @@
     <entity name="Singer" representedClassName="Singer" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Song" representedClassName="Song" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="singer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Singer"/>
+    </entity>
 </model>

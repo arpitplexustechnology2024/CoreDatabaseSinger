@@ -11,10 +11,11 @@ import CoreData
 class CoreDataManager {
     
     static let shared = CoreDataManager()
-    
     private init() {}
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // MARK: - Singer CRUD Operations
     
     func createSinger(name: String) {
         let newSinger = Singer(context: context)
@@ -34,14 +35,25 @@ class CoreDataManager {
         }
     }
     
-    func updateSinger(singer: Singer, newName: String) {
-        singer.name = newName
+    // MARK: - Song CRUD Operations
+    
+    func createSong(name: String, singer: Singer) {
+        let newSong = Song(context: context)
+        newSong.name = name
+        newSong.singer = singer
+        
         saveContext()
     }
     
-    func deleteSinger(singer: Singer) {
-        context.delete(singer)
-        saveContext()
+    func fetchSongs() -> [Song] {
+        let request: NSFetchRequest<Song> = Song.fetchRequest()
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            print("Failed to fetch songs: \(error)")
+            return []
+        }
     }
     
     private func saveContext() {
@@ -54,4 +66,3 @@ class CoreDataManager {
         }
     }
 }
-

@@ -15,7 +15,6 @@ class CustomSwitch: UIControl {
     private let leftIconImageView = UIImageView()
     private let rightIconImageView = UIImageView()
     
-    // Constants for layout
     private let switchWidth: CGFloat = 110
     private let switchHeight: CGFloat = 50
     private let circleSize: CGFloat = 40
@@ -36,30 +35,25 @@ class CustomSwitch: UIControl {
         self.layer.cornerRadius = switchHeight / 2
         self.clipsToBounds = true
         
-        // Setup background view
         backgroundView.frame = self.bounds
         backgroundView.backgroundColor = .orange
         addSubview(backgroundView)
         
-        // Setup circle view
         circleView.frame = CGRect(x: 5, y: 5, width: circleSize, height: circleSize)
         circleView.layer.cornerRadius = circleSize / 2
         circleView.backgroundColor = .white
         addSubview(circleView)
         
-        // Setup left icon
         leftIconImageView.frame = CGRect(x: 10, y: 10, width: circleImageSize, height: circleImageSize)
-        leftIconImageView.image = UIImage(named: "instagramIcon") // Replace with your Instagram icon
+        leftIconImageView.image = UIImage(named: "instagramIcon")
         leftIconImageView.contentMode = .scaleAspectFit
         addSubview(leftIconImageView)
         
-        // Setup right icon
         rightIconImageView.frame = CGRect(x: switchWidth - circleImageSize - 10, y: 10, width: circleImageSize, height: circleImageSize)
-        rightIconImageView.image = UIImage(named: "snapchatIcon") // Replace with your Snapchat icon
+        rightIconImageView.image = UIImage(named: "snapchatIcon")
         rightIconImageView.contentMode = .scaleAspectFit
         addSubview(rightIconImageView)
         
-        // Add tap gesture
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleSwitch))
         addGestureRecognizer(tapGesture)
     }
