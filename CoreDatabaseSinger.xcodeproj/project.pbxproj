@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD55B0572C3EEECE000293F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B0562C3EEECE000293F5 /* AppDelegate.swift */; };
 		BD55B0592C3EEECE000293F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B0582C3EEECE000293F5 /* SceneDelegate.swift */; };
-		BD55B05B2C3EEECE000293F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B05A2C3EEECE000293F5 /* ViewController.swift */; };
+		BD55B05B2C3EEECE000293F5 /* SingersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B05A2C3EEECE000293F5 /* SingersViewController.swift */; };
 		BD55B05E2C3EEECE000293F5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BD55B05D2C3EEECE000293F5 /* Base */; };
 		BD55B0612C3EEECE000293F5 /* CoreDatabaseSinger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD55B05F2C3EEECE000293F5 /* CoreDatabaseSinger.xcdatamodeld */; };
 		BD55B0632C3EEECF000293F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD55B0622C3EEECF000293F5 /* Assets.xcassets */; };
@@ -17,6 +17,9 @@
 		BD55B0712C3EEECF000293F5 /* CoreDatabaseSingerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B0702C3EEECF000293F5 /* CoreDatabaseSingerTests.swift */; };
 		BD55B07B2C3EEED0000293F5 /* CoreDatabaseSingerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B07A2C3EEED0000293F5 /* CoreDatabaseSingerUITests.swift */; };
 		BD55B07D2C3EEED0000293F5 /* CoreDatabaseSingerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B07C2C3EEED0000293F5 /* CoreDatabaseSingerUITestsLaunchTests.swift */; };
+		BD55B08A2C3EEEE7000293F5 /* CoreDatabaseSinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B0892C3EEEE7000293F5 /* CoreDatabaseSinger.swift */; };
+		BD55B08C2C3EF6B6000293F5 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B08B2C3EF6B6000293F5 /* Switch.swift */; };
+		BD55B08E2C3EF6DE000293F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55B08D2C3EF6DE000293F5 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,7 @@
 		BD55B0532C3EEECE000293F5 /* CoreDatabaseSinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDatabaseSinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD55B0562C3EEECE000293F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD55B0582C3EEECE000293F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD55B05A2C3EEECE000293F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD55B05A2C3EEECE000293F5 /* SingersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingersViewController.swift; sourceTree = "<group>"; };
 		BD55B05D2C3EEECE000293F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD55B0602C3EEECE000293F5 /* CoreDatabaseSinger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDatabaseSinger.xcdatamodel; sourceTree = "<group>"; };
 		BD55B0622C3EEECF000293F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,9 @@
 		BD55B0762C3EEED0000293F5 /* CoreDatabaseSingerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDatabaseSingerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD55B07A2C3EEED0000293F5 /* CoreDatabaseSingerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDatabaseSingerUITests.swift; sourceTree = "<group>"; };
 		BD55B07C2C3EEED0000293F5 /* CoreDatabaseSingerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDatabaseSingerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BD55B0892C3EEEE7000293F5 /* CoreDatabaseSinger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDatabaseSinger.swift; sourceTree = "<group>"; };
+		BD55B08B2C3EF6B6000293F5 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
+		BD55B08D2C3EF6DE000293F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +109,15 @@
 			children = (
 				BD55B0562C3EEECE000293F5 /* AppDelegate.swift */,
 				BD55B0582C3EEECE000293F5 /* SceneDelegate.swift */,
-				BD55B05A2C3EEECE000293F5 /* ViewController.swift */,
+				BD55B05A2C3EEECE000293F5 /* SingersViewController.swift */,
 				BD55B05C2C3EEECE000293F5 /* Main.storyboard */,
+				BD55B08D2C3EF6DE000293F5 /* ViewController.swift */,
+				BD55B08B2C3EF6B6000293F5 /* Switch.swift */,
 				BD55B0622C3EEECF000293F5 /* Assets.xcassets */,
 				BD55B0642C3EEECF000293F5 /* LaunchScreen.storyboard */,
 				BD55B0672C3EEECF000293F5 /* Info.plist */,
 				BD55B05F2C3EEECE000293F5 /* CoreDatabaseSinger.xcdatamodeld */,
+				BD55B0892C3EEEE7000293F5 /* CoreDatabaseSinger.swift */,
 			);
 			path = CoreDatabaseSinger;
 			sourceTree = "<group>";
@@ -261,8 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD55B05B2C3EEECE000293F5 /* ViewController.swift in Sources */,
+				BD55B05B2C3EEECE000293F5 /* SingersViewController.swift in Sources */,
+				BD55B08A2C3EEEE7000293F5 /* CoreDatabaseSinger.swift in Sources */,
 				BD55B0612C3EEECE000293F5 /* CoreDatabaseSinger.xcdatamodeld in Sources */,
+				BD55B08C2C3EF6B6000293F5 /* Switch.swift in Sources */,
+				BD55B08E2C3EF6DE000293F5 /* ViewController.swift in Sources */,
 				BD55B0572C3EEECE000293F5 /* AppDelegate.swift in Sources */,
 				BD55B0592C3EEECE000293F5 /* SceneDelegate.swift in Sources */,
 			);
